@@ -45,15 +45,14 @@ class ChatGPT:
         # Create string used in header
         self.auth = f"Bearer {api_key}"
         # This list will contain all prior messages
-        self.message_history = []
+        self._message_history = []
         self.model = model
 
     def chat(self, message: Message) -> Message:
-        # check if the message parameter is the correct type
-        assert type(message) == Message, "message must be an instance of Message"
-        self.message_history.append(message)
+        '''Add a message to the message history & send it to ChatGPT. Returns the answer as a Message instance.'''
+        self.add_to_chat(message)
         # create api_input from message_history & encode it
-        api_input = [m.to_api() for m in self.message_history]
+        api_input = [m.to_api() for m in self._message_history]
         api_input_encoded = dumps(
             {"model": self.model, "messages": api_input},
             separators=(",", ":")).encode()
@@ -75,8 +74,14 @@ class ChatGPT:
             api_output_answer["content"] = api_output_answer["content"].strip("\n")
             # convert to Message object
             response_message = Message.from_api(api_output_answer)
-            self.message_history.append(response_message)
+            self._message_history.append(response_message)
             return response_message
 
+    def add_to_chat(self, message: Message) -> Message:
+        '''Add a message to the message history without sending it to ChatGPT'''
+        # check if the message parameter is the correct type
+        assert type(message) == Message, "message must be an instance of Message"
+        self._message_history.append(message)
+
     def clear_message_history(self):
-        self.message_history = []
+        self._message_history = []
