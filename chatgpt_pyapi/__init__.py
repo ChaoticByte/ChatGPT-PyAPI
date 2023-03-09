@@ -1,3 +1,4 @@
+# Copyright (c) 2023 Julian Müller (ChaoticByte)
 
 from json import dumps, loads
 from urllib import request as http_request

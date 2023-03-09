@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Copyright (c) 2023 Julian Müller (ChaoticByte)
+
 from os import environ
 
 from chatgpt_pyapi import ChatGPT
