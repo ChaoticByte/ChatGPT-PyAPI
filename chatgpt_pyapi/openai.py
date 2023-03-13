@@ -40,6 +40,9 @@ class Message:
         '''Convert to API format'''
         return {"role": self.role, "content": self.text}
 
+    def __str__(self):
+        return f"Role: {self.role}, Text: {self.text}"
+
 
 class ChatGPT:
     '''ChatGPT API'''
