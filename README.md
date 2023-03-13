@@ -1,6 +1,6 @@
 # ChatGPT-PyAPI
 
-A minimalistic Python API for OpenAI's ChatGPT
+A minimalistic Python API for OpenAI's ChatGPT and Bing's Chatbot
 
 ## Supported APIs
 
