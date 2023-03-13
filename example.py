@@ -4,10 +4,7 @@
 
 from os import environ
 
-from chatgpt_pyapi import ChatGPT
-from chatgpt_pyapi import Message
-from chatgpt_pyapi import Models
-from chatgpt_pyapi import Roles
+from chatgpt_pyapi.openai import ChatGPT, Message, Models, Roles
 
 # Read the API key from a environment variable
 API_KEY = environ["OPENAI_API_KEY"]
