@@ -25,8 +25,9 @@ class Message:
     def from_api(cls, api_msg: dict):
         '''Create a Message object from API format'''
         assert type(api_msg) == dict
+        text = api_msg["item"]["messages"][1]["adaptiveCards"][0]["body"][0]["text"].strip("\n")
         return cls(
-            api_msg["item"]["messages"][1]["adaptiveCards"][0]["body"][0]["text"],
+            text,
             _role=_Roles.ASSISTANT)
 
     def to_api(self):
