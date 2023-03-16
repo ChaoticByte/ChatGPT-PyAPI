@@ -10,10 +10,10 @@ You need an API key for the official ChatGPT API.
 
 The following models are supported:
 
-- GPT-4
-- GPT-4-0314
-- GPT-4-32k
-- GPT-4-32k-0314
+- GPT-4 (untested)
+- GPT-4-0314 (untested)
+- GPT-4-32k (untested)
+- GPT-4-32k-0314 (untested)
 - GPT-3.5-Turbo
 - GPT-3.5-Turbo-0301
 
@@ -23,7 +23,7 @@ This requires the [EdgeGPT](https://github.com/acheong08/EdgeGPT) library to be 
 
 ## Examples
 
-For examples, take a look at `examples.py`.
+For examples, take a look at `example.py`.
 
 ## CLI
 
